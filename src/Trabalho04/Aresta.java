@@ -1,4 +1,4 @@
-package API;
+package Trabalho04;
 
 public class Aresta {
     private int v;
@@ -29,7 +29,7 @@ public class Aresta {
 
     @Override
     public String toString() {
-        return "API.Aresta Existente{" +
+        return "Atividade04.Aresta Existente{" +
                 + v +
                 " -> " + w +
                 '}';

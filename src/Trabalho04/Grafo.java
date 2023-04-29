@@ -1,6 +1,4 @@
-package API;
-
-import API.Aresta;
+package Trabalho04;
 
 import java.util.ArrayList;
 
@@ -33,7 +31,7 @@ public class Grafo {
         }
         for (Aresta aresta : arestas) {
             if ((aresta.getV() == V) && (aresta.getW() == W)) {
-                System.out.printf("API.Aresta %d -> %d já existe\n", V, W);
+                System.out.printf("Atividade04.Aresta %d -> %d já existe\n", V, W);
                 return;
             }
         }
@@ -67,7 +65,7 @@ public class Grafo {
     public String toString() {
         System.out.println();
         this.listArest();
-        return "\nAPI.Grafo=(" +
+        return "\nAtividade04.Grafo=(" +
                 "V=" + V +
                 ", A=" + A +
                 ')';
