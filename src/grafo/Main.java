@@ -10,9 +10,9 @@ public class Main {
         g.addAresta(2,3);
         g.addAresta(3,4);
         g.addAresta(4,5);
-        g.addAresta(4,7);
-        g.addAresta(7,6);
-        g.addAresta(7,8);
+        g.addAresta(4,6);
+        g.addAresta(6,7);
+        g.addAresta(6,8);
 
         System.out.println(g);
         
