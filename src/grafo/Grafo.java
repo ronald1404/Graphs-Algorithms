@@ -20,6 +20,7 @@ public class Grafo {
         for (int i = 0; i < V; i++) {
             vertices.add(new Vertice());
         }
+        // criar a matriz ao inicializar os vértices
         MatrizAdjacente = new int[v][v];
     }
 
@@ -35,6 +36,10 @@ public class Grafo {
         if (v >= this.V || W < 0 || W >= this.V) return;
         if (!vertices.get(v).ListAdjacencias.contains(W)){
             vertices.get(v).ListAdjacencias.add(W);
+            if (!vertices.get(W).ListAdjacencias.contains(v)){
+                vertices.get(W).ListAdjacencias.add(v);
+                arestas.add(new Aresta(W,v));
+            }
             arestas.add(new Aresta(v,W));
             A += 1;
         }

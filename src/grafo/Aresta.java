@@ -29,7 +29,7 @@ public class Aresta {
 
     @Override
     public String toString() {
-        return "Atividade04.Aresta Existente{" +
+        return "Aresta Existente {" +
                 + v +
                 " -> " + w +
                 '}';
