@@ -72,7 +72,7 @@ cor[0] = preto
 pi[0] = 0
 ```
 
-### Resultado da busca
+### Resultado da busca em largura
 
 
 ```java
