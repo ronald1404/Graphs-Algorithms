@@ -19,6 +19,8 @@ public class Main {
         System.out.println();
         g.printMatriz();
 
-        BuscaEmProfundidade busca = new BuscaEmProfundidade(g, 0);
+        //BuscaEmProfundidade busca = new BuscaEmProfundidade(g, 0);
+        
+        BuscaEmLargura bEmLargura = new BuscaEmLargura(g, 0);
     }
 }
