@@ -72,6 +72,9 @@ cor[0] = preto
 pi[0] = 0
 ```
 
+### Resultado da busca
+
+
 ```java
 d[0] = 0
 pi[0] = -1
