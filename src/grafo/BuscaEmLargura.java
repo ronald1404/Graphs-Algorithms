@@ -56,7 +56,6 @@ public class BuscaEmLargura {
             }
             // pinte o vértice de preto
             cor[u] = "Preto";
-
             System.out.println(String.format("cor[%d] = %s", u, cor[u]));
         }
 

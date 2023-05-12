@@ -71,3 +71,59 @@ f[0] = 18
 cor[0] = preto
 pi[0] = 0
 ```
+
+```java
+d[0] = 0
+pi[0] = -1
+cor[0] = Cinza
+
+cor[0] = Preto
+
+d[1] = 1
+pi[1] = 0
+cor[1] = Cinza
+
+cor[1] = Preto
+
+d[2] = 2
+pi[2] = 1
+cor[2] = Cinza
+
+cor[2] = Preto
+
+d[4] = 2
+pi[4] = 1
+cor[4] = Cinza
+
+cor[4] = Preto
+
+d[3] = 3
+pi[3] = 2
+cor[3] = Cinza
+
+cor[3] = Preto
+
+d[5] = 3
+pi[5] = 4
+cor[5] = Cinza
+
+cor[5] = Preto
+
+d[6] = 3
+pi[6] = 4
+cor[6] = Cinza
+
+cor[6] = Preto
+
+d[7] = 4
+pi[7] = 6
+cor[7] = Cinza
+
+cor[7] = Preto
+
+d[8] = 4
+pi[8] = 6
+cor[8] = Cinza
+
+cor[8] = Preto
+```
