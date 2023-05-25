@@ -3,6 +3,7 @@ package grafo;
 public class Aresta {
     private int v;
     private int w;
+    private int u;
 
     public Aresta(){
     }
@@ -10,15 +11,11 @@ public class Aresta {
         this.v = v;
         this.w = w;
     }
-
-    public void setV(int v) {
+    public Aresta(int v, int w, int u){
         this.v = v;
-    }
-
-    public void setW(int w) {
         this.w = w;
+        this.u = u;
     }
-
     public int getV() {
         return v;
     }
@@ -26,7 +23,9 @@ public class Aresta {
     public int getW() {
         return w;
     }
-
+    public int getU() {
+            return u;
+    }
     @Override
     public String toString() {
         return "Aresta Existente {" +

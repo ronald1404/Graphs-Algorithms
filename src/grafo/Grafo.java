@@ -31,16 +31,30 @@ public class Grafo {
     public int A() {
         return this.A;
     }
-    
+
+//    Adicionar aresta sem peso
     public void addAresta(int v, int W) {
         if (v >= this.V || W < 0 || W >= this.V) return;
-        if (!vertices.get(v).ListAdjacencias.contains(W)){
+        boolean aux = vertices.get(v).ListAdjacencias.contains(W);
+        if (!aux){
             vertices.get(v).ListAdjacencias.add(W);
-            if (!vertices.get(W).ListAdjacencias.contains(v)){
-                vertices.get(W).ListAdjacencias.add(v);
-                arestas.add(new Aresta(W,v));
-            }
+            vertices.get(W).ListAdjacencias.add(v);
+            arestas.add(new Aresta(W,v));
             arestas.add(new Aresta(v,W));
+            A += 1;
+        }
+    }
+//    Adicionar aresta com peso
+    public void addAresta(int v, int W, int u) {
+
+        if (v >= this.V || W < 0 || W >= this.V) return;
+        boolean aux = vertices.get(v).ListAdjacencias.contains(W);
+
+        if (!aux){
+            vertices.get(v).ListAdjacencias.add(W);
+            vertices.get(W).ListAdjacencias.add(v);
+            arestas.add(new Aresta(W,v, u));
+            arestas.add(new Aresta(v,W, u));
             A += 1;
         }
     }
@@ -48,9 +62,8 @@ public class Grafo {
     private int[][] percorreMatriz() {
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
-                if (vertices.get(i).ListAdjacencias.contains(j)) 
-                    MatrizAdjacente[i][j] = 1;
-                else MatrizAdjacente[i][j] = 0;
+                boolean aux = vertices.get(i).ListAdjacencias.contains(j);
+                MatrizAdjacente[i][j] = (aux) ? 1 : 0;
             }
         }
         return MatrizAdjacente;
@@ -62,8 +75,8 @@ public class Grafo {
         System.out.print("\t-");
         for (int j = 0; j < V; j++) {
             System.out.print( j+" - ");
-        }System.out.println();
-
+        }
+        System.out.println();
         for (int i = 0; i < V; i++) {
             System.out.printf("L%d\t|", i);
             for (int j = 0; j < V; j++) {
@@ -74,17 +87,7 @@ public class Grafo {
     }
 
     public Iterable<Integer> adj(int v) {
-        ArrayList<Integer> list = new ArrayList<>();
-
-        for (Aresta aux : arestas) {
-            if (aux.getV() == v) {
-                if (!list.contains(aux.getW()))
-                    list.add(aux.getW());
-            } else if (aux.getW() == v) {
-                if (!list.contains(aux.getV()))
-                    list.add(aux.getV());
-            }
-        }
+        ArrayList<Integer> list = vertices.get(v).ListAdjacencias;
         return list;
     }
 
@@ -98,7 +101,7 @@ public class Grafo {
     public String toString() {
         System.out.println();
         this.listArest();
-        return "\nAtividade04.Grafo=(" +
+        return "\nGrafo=(" +
                 "V=" + V +
                 ", A=" + A +
                 ')';
