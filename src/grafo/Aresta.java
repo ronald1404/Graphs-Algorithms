@@ -23,8 +23,11 @@ public class Aresta {
     public int getW() {
         return w;
     }
-    public int getU() {
-            return u;
+
+    public int getU(int v, int w) {
+        if( v == this.v && w == this.w) 
+        return u;
+        return -1;
     }
     @Override
     public String toString() {

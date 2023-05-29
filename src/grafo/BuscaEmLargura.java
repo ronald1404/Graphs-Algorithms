@@ -10,7 +10,7 @@ public class BuscaEmLargura {
     private int [] pi;
     private int[] d;
 
-    public BuscaEmLargura(Grafo G, int s) {
+    public BuscaEmLargura(GrafoOrientado G, int s) {
         marcado = new boolean[G.V()];
         cor = new String[G.V()];
         d = new int[G.V()];
@@ -18,7 +18,7 @@ public class BuscaEmLargura {
         bfs(G, s);
     }
 
-    private void bfs(Grafo G, int s) {
+    private void bfs(GrafoOrientado G, int s) {
 
         // Inicializar com vértices brancos
         for (int i = 0; i < G.V() ; i++ ){

@@ -2,14 +2,15 @@ package grafo;
 
 import java.util.ArrayList;
 
-public class Grafo {
+public abstract class  Grafo {
     
     private final int V;
-    private int A;
+    protected int A;
     
     ArrayList<Aresta> arestas = new ArrayList<Aresta>();
     ArrayList<Vertice> vertices = new ArrayList<>();
     int[][] MatrizAdjacente; 
+    int[][] MatrizPesosArestas;
 
     public Grafo(int V) {
         this.V = V;
@@ -22,6 +23,7 @@ public class Grafo {
         }
         // criar a matriz ao inicializar os vértices
         MatrizAdjacente = new int[v][v];
+        MatrizPesosArestas = new int[v][v];;
     }
 
     public int V() {
@@ -34,29 +36,18 @@ public class Grafo {
 
 //    Adicionar aresta sem peso
     public void addAresta(int v, int W) {
-        if (v >= this.V || W < 0 || W >= this.V) return;
-        boolean aux = vertices.get(v).ListAdjacencias.contains(W);
-        if (!aux){
-            vertices.get(v).ListAdjacencias.add(W);
-            vertices.get(W).ListAdjacencias.add(v);
-            arestas.add(new Aresta(W,v));
-            arestas.add(new Aresta(v,W));
-            A += 1;
-        }
+
     }
 //    Adicionar aresta com peso
-    public void addAresta(int v, int W, int u) {
-
-        if (v >= this.V || W < 0 || W >= this.V) return;
-        boolean aux = vertices.get(v).ListAdjacencias.contains(W);
-
-        if (!aux){
-            vertices.get(v).ListAdjacencias.add(W);
-            vertices.get(W).ListAdjacencias.add(v);
-            arestas.add(new Aresta(W,v, u));
-            arestas.add(new Aresta(v,W, u));
-            A += 1;
+    public void addAresta(int v, int W, int u){
+        
+    }
+    public int pesoAresta(int v, int w){
+        for(Aresta aux: arestas){
+            if (aux.getV() == v && aux.getW() == w) 
+             return aux.getU(v,w);
         }
+        return 0;
     }
     
     private int[][] percorreMatriz() {
@@ -91,16 +82,39 @@ public class Grafo {
         return list;
     }
 
-    private void listArest(){
+    private void listingArest(){
         for (Aresta aresta : arestas) {
             System.out.println(aresta);
         }
     }
 
+    public ArrayList<Integer> getVertices(){
+        ArrayList<Integer> aux = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            aux.add(i);
+        }
+        return aux;
+    }
+    
+    public void printMatrizPesoArestas() {
+
+        System.out.print("\t-");
+        for (int j = 0; j < V; j++) {
+            System.out.print( j+" - ");
+        }
+        System.out.println();
+        for (int i = 0; i < V; i++) {
+            System.out.printf("L%d\t|", i);
+            for (int j = 0; j < V; j++) {
+                System.out.print(MatrizPesosArestas[i][j] + " | ");
+            }
+            System.out.println();
+        }
+    }
     @Override
     public String toString() {
         System.out.println();
-        this.listArest();
+        this.listingArest();
         return "\nGrafo=(" +
                 "V=" + V +
                 ", A=" + A +

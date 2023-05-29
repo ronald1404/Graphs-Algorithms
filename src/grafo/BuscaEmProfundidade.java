@@ -11,7 +11,7 @@ public class BuscaEmProfundidade {
     private int[] pi;
     private int tempo = 0;
     
-    public  BuscaEmProfundidade(Grafo g, int s) {    
+    public  BuscaEmProfundidade(GrafoOrientado g, int s) {    
             
         marcado = new boolean[g.V()];
         cor = new String[g.V()];
@@ -22,13 +22,13 @@ public class BuscaEmProfundidade {
         this.dfs(g, s);
     }
 
-    private void inicializaCores(Grafo g){
+    private void inicializaCores(GrafoOrientado g){
         for (int i = 0 ; i < g.V(); i++){
             cor[i] = "branco";
         }
     }
     
-    private void dfs(Grafo g, int v) {
+    private void dfs(GrafoOrientado g, int v) {
 
         cor[v] = "cinza";
         marcado[v] = true;
