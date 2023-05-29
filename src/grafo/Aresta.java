@@ -3,7 +3,7 @@ package grafo;
 public class Aresta {
     private int v;
     private int w;
-    private int u;
+    private int peso;
 
     public Aresta(){
     }
@@ -11,10 +11,10 @@ public class Aresta {
         this.v = v;
         this.w = w;
     }
-    public Aresta(int v, int w, int u){
+    public Aresta(int v, int w, int peso){
         this.v = v;
         this.w = w;
-        this.u = u;
+        this.peso = peso;
     }
     public int getV() {
         return v;
@@ -24,10 +24,13 @@ public class Aresta {
         return w;
     }
 
-    public int getU(int v, int w) {
+    public int getPeso(int v, int w) {
         if( v == this.v && w == this.w) 
-        return u;
+        return peso;
         return -1;
+    }
+    public int getPeso() {
+        return peso;
     }
     @Override
     public String toString() {

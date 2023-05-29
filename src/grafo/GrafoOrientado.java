@@ -15,7 +15,7 @@ public class GrafoOrientado extends Grafo{
             vertices.get(u).ListAdjacencias.add(v);
             arestas.add(new Aresta(u,v,w));
             A += 1;
-            MatrizPesosArestas[u][v] = arestas.get(A-1).getU(u, v);
+            MatrizPesosArestas[u][v] = arestas.get(A-1).getPeso(u, v);
         }
     }
 }

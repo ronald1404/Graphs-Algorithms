@@ -45,7 +45,7 @@ public abstract class  Grafo {
     public int pesoAresta(int v, int w){
         for(Aresta aux: arestas){
             if (aux.getV() == v && aux.getW() == w) 
-             return aux.getU(v,w);
+             return aux.getPeso(v,w);
         }
         return 0;
     }

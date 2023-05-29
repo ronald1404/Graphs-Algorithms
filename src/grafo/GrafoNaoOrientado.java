@@ -17,8 +17,8 @@ public class GrafoNaoOrientado extends Grafo{
             arestas.add(new Aresta(u,v,w));
             arestas.add(new Aresta(v,u,w));
             A += 1;
-            MatrizPesosArestas[u][v] = arestas.get(A-1).getU(u, v);
-            MatrizPesosArestas[u][v] = arestas.get(A-1).getU(v, u);
+            MatrizPesosArestas[u][v] = arestas.get(A-1).getPeso(u, v);
+            MatrizPesosArestas[u][v] = arestas.get(A-1).getPeso(v, u);
         }
     }
 }

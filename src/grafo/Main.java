@@ -35,10 +35,25 @@ public class Main {
         // g.addAresta(4, 5, 6);
 
         
-        // Algoritmo de dijsktra para o grafo acima
+        // // Algoritmo de dijsktra para o grafo acima
         // System.out.println(g);
         // g.printMatriz();
         // Dijkstra djk = new Dijkstra(g, 0);       
 
+
+        GrafoOrientado g = new GrafoOrientado(6);
+        g.addAresta(0, 1, 10);
+        g.addAresta(0, 2, 5);
+        g.addAresta(1, 3, 1);
+        g.addAresta(2, 1, 3);
+        g.addAresta(2, 3, 8);
+        g.addAresta(2, 4, 2);
+        g.addAresta(3, 4, 4);
+        g.addAresta(3, 5, 4);
+        g.addAresta(4, 5, 6);
+        g.addAresta(3, 1, -7);
+        g.addAresta(5, 3, -9);
+
+        BellmanFord bf =  new BellmanFord(g,0);
     }
 }
