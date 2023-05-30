@@ -27,7 +27,7 @@ public class Aresta {
     public int getPeso(int v, int w) {
         if( v == this.v && w == this.w) 
         return peso;
-        return -1;
+        return -1000;
     }
     public int getPeso() {
         return peso;
