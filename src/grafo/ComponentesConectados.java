@@ -1,11 +1,11 @@
 package grafo;
 
-public class CC {
+public class ComponentesConectados {
     private boolean[] marcado;
     private int[] id;
     private int count;
 
-    public CC(Grafo G) {
+    public ComponentesConectados(Grafo G) {
         marcado = new boolean[G.V()];
         id = new int[G.V()];
         for (int v = 0; v < G.V(); v++) {

@@ -13,15 +13,29 @@ public class FloydWarshall extends Algoritmos {
                 else matriz[i][j] = g.pesoAresta(i, j);
         }
         }
+        System.out.println();
         for(int i = 0;i < g.V();i++){
-            for(int j = 0; j < g.V();j++){
-                for(int k = 0; k < g.V();k++){
-                    if(matriz[j][i] + matriz[i][k] < matriz[j][k]){
-                        matriz[j][k] = matriz[j][i] + matriz[i][k];
+            for(int j = 0; j < g.V(); j++){
+                System.out.print("\t"+matriz[i][j]);
+            }
+            System.out.println();
+        }
+        for(int k = 0; k < g.V();k++){
+            for(int i = 0;i < g.V();i++){
+                for(int j = 0; j < g.V();j++){
+                    if(matriz[i][k] + matriz[k][j] < matriz[i][j]){
+                        matriz[i][j] = matriz[i][k] + matriz[k][j];
                         pi[k] = i;
                     }
                 }
             }
+        }
+        System.out.println();
+        for(int i = 0;i < g.V();i++){
+            for(int j = 0; j < g.V(); j++){
+                System.out.print("\t"+matriz[i][j]);
+            }
+            System.out.println();
         }
     }
 }
