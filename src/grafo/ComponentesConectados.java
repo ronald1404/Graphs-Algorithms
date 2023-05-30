@@ -14,6 +14,7 @@ public class ComponentesConectados {
                 count++;
             }
         }
+        System.out.println("Grafos Componentes = "+ this.count);
     }
 
     public int count(){
