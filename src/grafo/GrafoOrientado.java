@@ -8,6 +8,17 @@ public class GrafoOrientado extends Grafo{
     }
 
     @Override
+    public void addAresta(int u, int v) {
+        boolean aux = vertices.get(u).ListAdjacencias.contains(v);
+        if (!aux){
+            vertices.get(u).ListAdjacencias.add(v);
+            arestas.add(new Aresta(u,v));
+            A += 1;
+            MatrizPesosArestas[u][v] = arestas.get(A-1).getPeso();
+        }
+    }
+
+    @Override
     public void addAresta(int u, int v, int w){
 
         boolean aux = vertices.get(u).ListAdjacencias.contains(v);
@@ -15,7 +26,7 @@ public class GrafoOrientado extends Grafo{
             vertices.get(u).ListAdjacencias.add(v);
             arestas.add(new Aresta(u,v,w));
             A += 1;
-            MatrizPesosArestas[u][v] = arestas.get(A-1).getPeso(u, v);
+            MatrizPesosArestas[u][v] = arestas.get(A-1).getPeso();
         }
     }
 }

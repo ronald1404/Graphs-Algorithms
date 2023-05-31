@@ -18,12 +18,17 @@ public abstract class  Grafo {
     }
     
     private void initVertices(int v) {
+        MatrizAdjacente = new int[v][v];
+        MatrizPesosArestas = new int[v][v];
+
         for (int i = 0; i < V; i++) {
             vertices.add(new Vertice());
+            for(int j = 0; j<V;j++){
+                MatrizAdjacente [i][j]= 0;
+                MatrizPesosArestas[i][j] = 0;
+            }
         }
         // criar a matriz ao inicializar os vértices
-        MatrizAdjacente = new int[v][v];
-        MatrizPesosArestas = new int[v][v];;
     }
 
     public int V() {
@@ -36,18 +41,19 @@ public abstract class  Grafo {
 
 //    Adicionar aresta sem peso
     public void addAresta(int v, int W) {
-
+        
     }
 //    Adicionar aresta com peso
     public void addAresta(int v, int W, int u){
         
     }
-    public int pesoAresta(int v, int w){
+    public Aresta getAresta(int v, int w){
         for(Aresta aux: arestas){
             if (aux.getV() == v && aux.getW() == w) 
-             return aux.getPeso(v,w);
+             return aux;
         }
-        return 0;
+        System.out.println("Aresta "+v+","+w+" Nao existe");
+        return null;
     }
     
     private int[][] percorreMatriz() {

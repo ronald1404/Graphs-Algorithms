@@ -9,13 +9,14 @@ public abstract class Algoritmos {
 	    pi = new int[g.V()];
         for  (int v = 0 ; v < g.V(); v++){
             pi[v] = -1;
-            d[v] = 99999;
+            d[v] = (int) Double.POSITIVE_INFINITY;
         }         
         d[s] = 0;
     }
 
-    public void relax(Grafo g, int u, int v){
-        int peso = g.pesoAresta(u, v);
+    public void relax(Grafo g, int u, int v){;
+        int peso = g.getAresta(u, v).getPeso();
+        
         if (d[v] > d[u] + peso){ 
             // System.out.printf("d[%d] era %d\n",v,d[v]);
             d[v] = d[u] + peso;

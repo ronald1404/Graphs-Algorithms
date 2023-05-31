@@ -10,8 +10,11 @@ public class FloydWarshall extends Algoritmos {
         for(int i = 0;i < g.V();i++){
             for(int j = 0; j < g.V();j++){
                 if (i == j) matriz[i][j] = 0;
-                else matriz[i][j] = g.pesoAresta(i, j);
-        }
+                else matriz[i][j] = 
+                    g.vertices.get(i).ListAdjacencias.contains(j) ?
+                         g.getAresta(i, j).getPeso(i, j)
+                         : 9999;;
+            }
         }
         System.out.println();
         for(int i = 0;i < g.V();i++){
