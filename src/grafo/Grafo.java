@@ -25,7 +25,7 @@ public abstract class  Grafo {
             vertices.add(new Vertice());
             for(int j = 0; j<V;j++){
                 MatrizAdjacente [i][j]= 0;
-                MatrizPesosArestas[i][j] = 0;
+                MatrizPesosArestas[i][j] =(int) Double.POSITIVE_INFINITY;
             }
         }
         // criar a matriz ao inicializar os vértices
@@ -56,7 +56,7 @@ public abstract class  Grafo {
         return null;
     }
     
-    private int[][] percorreMatriz() {
+    protected int[][] percorreMatriz() {
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
                 boolean aux = vertices.get(i).ListAdjacencias.contains(j);

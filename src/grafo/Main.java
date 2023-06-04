@@ -19,10 +19,22 @@ public class Main {
         componentesConectados();
         
         System.out.println("-----------------------------");
+        fechoTransitivoWarshall();
 
     }
 
-    static void Buscas() {
+    private static void fechoTransitivoWarshall() {
+        GrafoOrientado g = new GrafoOrientado(5);
+        g.addAresta(0, 1);
+        g.addAresta(1, 2);
+        g.addAresta(2, 0);
+        g.addAresta(2, 3);
+        g.addAresta(4, 0);
+        g.addAresta(4, 2);
+        FechoTransitivoWarshall ftw = new FechoTransitivoWarshall(g);
+    }
+
+    private static void Buscas() {
         GrafoNaoOrientado g = new GrafoNaoOrientado(9);
         g.addAresta(0, 1);
         g.addAresta(1, 2);
