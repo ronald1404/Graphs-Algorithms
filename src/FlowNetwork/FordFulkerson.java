@@ -21,30 +21,24 @@ public class FordFulkerson {
     }
 
     private boolean caminhoAumentante(GrafoRedeFluxo G, int s, int t) {
-    arestaPara = new Aresta[G.V()]; // Array para armazenar as arestas do caminho aumentante
-    marcado = new boolean[G.V()]; // Array para marcar os vértices visitados
-    Queue<Integer> pilha = new ArrayDeque<>(); // Fila para armazenar os vértices a serem processados
-    pilha.add(s); // Adiciona o vértice de origem à pilha
-    marcado[s] = true; // Marca o vértice de origem como visitado
-
-    while (!pilha.isEmpty()) { // Enquanto houver vértices na pilha
-        int v = pilha.poll(); // Remove o próximo vértice da pilha para processamento
-
-        for (Aresta e : G.adj(v)) { // Percorre as arestas adjacentes ao vértice v
-            int w = e.outro(v); // Obtém o outro vértice da aresta (não v)
-
-            if (!marcado[w] && (e.capacidadeResidualPara(w) > 0)) {
-                // Verifica se o vértice w ainda não foi visitado e se a capacidade residual é maior que zero
-                arestaPara[w] = e; // Armazena a aresta e como parte do caminho aumentante
-                marcado[w] = true; // Marca o vértice w como visitado
-                pilha.add(w); // Adiciona o vértice w à pilha para processamento posterior
+        arestaPara = new Aresta[G.V()];
+        marcado = new boolean[G.V()];
+        Queue<Integer> pilha = new ArrayDeque<>();
+        pilha.add(s);
+        marcado[s] = true;
+        while (!pilha.isEmpty()) {
+            int v = pilha.poll();
+            for (Aresta e : G.adj(v)) {
+                int w = e.outro(v);
+                if (!marcado[w] && (e.capacidadeResidualPara(w) > 0)) {
+                    arestaPara[w] = e;
+                    marcado[w] = true;
+                    pilha.add(w);
+                }
             }
         }
+        return marcado[t];
     }
-
-    return marcado[t]; // Retorna true se o vértice de destino t foi visitado
-}
-
 
     public double valor() {
         return valor;
