@@ -3,15 +3,15 @@ package FlowNetwork;
 import java.util.ArrayList;
 import java.util.List;
 
-public class redeFluxo {
+public class GrafoRedeFluxo {
     private final int V;
     private List<Aresta>[] adj;
 
-    public redeFluxo(int V) {
+    public GrafoRedeFluxo(int V) {
         this.V = V;
         adj = new ArrayList[V];
-        for (int v = 0; v < V; v++)
-            adj[v] = new ArrayList<>();
+        for (int i = 0; i < V; i++)
+            adj[i] = new ArrayList<>();
     }
 
     public void addAresta(Aresta e) {
@@ -24,6 +24,7 @@ public class redeFluxo {
     public Iterable<Aresta> adj(int v) {
         return adj[v];
     }
+
     public int V(){
         return this.V;
     }

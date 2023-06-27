@@ -2,7 +2,7 @@ package FlowNetwork;
 
 public class Main {
     public static void main(String[] args) {
-        redeFluxo g = new redeFluxo(6);
+        GrafoRedeFluxo g = new GrafoRedeFluxo(6);
         g.addAresta(new Aresta(0, 1, 16));
         g.addAresta(new Aresta(0, 2, 13));
         g.addAresta(new Aresta(2, 1, 4));

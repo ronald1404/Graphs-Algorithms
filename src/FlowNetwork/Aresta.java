@@ -32,8 +32,7 @@ public class Aresta {
             return w;
         else if (vertice == w)
             return v;
-        else
-            throw new IllegalArgumentException();
+        return -1;
     }
 
     public double capacidadeResidualPara(int vertice) {
@@ -41,8 +40,7 @@ public class Aresta {
             return fluxo;
         else if (vertice == w)
             return capacidade - fluxo;
-        else
-            throw new IllegalArgumentException();
+        return -1;
     }
 
     public void AddFluxoResidualPara(int vertice, double delta) {
@@ -50,7 +48,5 @@ public class Aresta {
             fluxo -= delta;
         else if (vertice == w)
             fluxo += delta;
-        else
-            throw new IllegalArgumentException();
     }
 }
